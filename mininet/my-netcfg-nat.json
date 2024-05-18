@@ -1,0 +1,52 @@
+{
+	"devices": {
+	  "device:leaf1": {
+		"basic": {
+		  "managementAddress": "grpc://mininet:50001?device_id=1",
+		  "driver": "stratum-bmv2",
+		  "pipeconf": "org.onosproject.ngsdn-tutorial",
+		  "locType": "grid",
+		  "gridX": 0,
+		  "gridY": 600
+		},
+		"fabricDeviceConfig": {
+			"myStationMac": "00:aa:00:00:00:01",
+			"mySid": "10.0.10.255",
+			"isSpine": false,
+			"gatewayPort": -1
+		  }
+	  }
+	},
+	"ports": {
+	  "device:spine1/4": {
+		"interfaces": [
+		  {
+			"name": "spine1-1",
+			"ips": [
+			  "10.0.0.2/16"
+			],
+			"vlan-untagged": 100
+		  }
+		]
+      }
+	},
+	"hosts": {
+	  "00:00:00:00:00:10/None": {
+		"basic": {
+		  "name": "h1",
+		  "locType": "grid",
+		  "gridX": 0,
+		  "gridY": 700
+		}
+	  },
+	  "00:ff:00:00:00:01/None": {
+		  "basic": {
+			  "name": "nat",
+			  "locType": "grid",
+			  "gridX": 0,
+			  "gridY": 500
+		  }
+	  }
+	}
+  }
+  

@@ -1,0 +1,130 @@
+{
+	"devices": {
+	  "device:loadbalancer": {
+		"basic": {
+		  "managementAddress": "grpc://mininet:50001?device_id=1",
+		  "driver": "stratum-bmv2",
+		  "pipeconf": "org.onosproject.ngsdn-tutorial",
+		  "locType": "grid",
+		  "gridX": 500,
+		  "gridY": 500
+		},
+		"fabricDeviceConfig": {
+			"myStationMac": "00:aa:00:00:00:01",
+			"mySid": "10.0.0.1",
+			"isSpine": false,
+			"gatewayPort": -1,
+			"loadBalancer": {
+				"myVirtualMac": "00:aa:00:00:00:01",
+				"myVirtualIp": "10.0.0.1",
+				"servers": [
+					"00:00:00:00:10:10/10.0.10.1/server1",
+					"00:00:00:00:20:10/10.0.20.1/server2",
+					"00:00:00:00:30:10/10.0.30.1/server3",
+					"00:00:00:00:40:10/10.0.40.1/server4"
+				]
+			}
+		  }
+	  }
+	},
+	"ports": {
+	  "device:loadbalancer/1": {
+		"interfaces": [
+		  {
+			"name": "loadbalancer-1",
+			"ips": [
+			  "10.0.0.1/16"
+			],
+			"vlan-untagged": 100
+		  }
+		]
+      },
+	  "device:loadbalancer/2": {
+		"interfaces": [
+		  {
+			"name": "loadbalancer-2",
+			"ips": [
+			  "10.0.0.1/16"
+			],
+			"vlan-untagged": 100
+		  }
+		]
+	  },
+	  "device:loadbalancer/3": {
+		"interfaces": [
+		  {
+			"name": "loadbalancer-3",
+			"ips": [
+			  "10.0.0.1/16"
+			],
+			"vlan-untagged": 100
+		  }
+		]
+	  },
+	  "device:loadbalancer/4": {
+		"interfaces": [
+		  {
+			"name": "loadbalancer-4",
+			"ips": [
+			  "10.0.0.1/16"
+			],
+			"vlan-untagged": 100
+		  }
+		]
+	  },
+	  "device:loadbalancer/5": {
+		"interfaces": [
+		  {
+			"name": "loadbalancer-5",
+			"ips": [
+			  "10.0.0.1/16"
+			],
+			"vlan-untagged": 100
+		  }
+		]
+	  }
+	},
+	"hosts": {
+	  "00:00:00:00:00:10/None": {
+		"basic": {
+		  "name": "h1",
+		  "locType": "grid",
+		  "gridX": 400,
+		  "gridY": 500
+		}
+	  },
+	  "00:00:00:00:10:10/None": {
+		"basic": {
+		  "name": "server1",
+		  "locType": "grid",
+		  "gridX": 600,
+		  "gridY": 300
+		}
+	  },
+	  "00:00:00:00:20:10/None": {
+		"basic": {
+		  "name": "server2",
+		  "locType": "grid",
+		  "gridX": 600,
+		  "gridY": 400
+		}
+	  },
+	  "00:00:00:00:30:10/None": {
+		"basic": {
+		  "name": "server3",
+		  "locType": "grid",
+		  "gridX": 600,
+		  "gridY": 600
+		}
+	  },
+	  "00:00:00:00:40:10/None": {
+		"basic": {
+		  "name": "server4",
+		  "locType": "grid",
+		  "gridX": 600,
+		  "gridY": 700
+		}
+	}
+  }
+}
+  
